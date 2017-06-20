@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mock test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <div id="app"></div>
+    <button id="test" type="button">ajax</button>
+    <script>
+        var test = document.getElementById('test');
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+            }
+        }
+        xhr.open('GET', 'api/test');
+        xhr.send();
+        // test.onclick = function () {
+        //     xhr.open('GET', 'api/test');
+        //     xhr.send();
+        // }
+    </script>
+</body>
+</html>
